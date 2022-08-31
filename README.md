@@ -7,6 +7,8 @@ Virtual Environment - conda API
 ```
 ## Project
 ### Toward Explainable Semantic Segmentation Guided Detector for Segmentation and Classification of Diffusion-Weighted MRI of Acute Ischemic Stroke
+> The SGD-Net precisely segmented AIS lesions on DWI and accurately classified lesion size and location. Based on the two-stage design, combinations of different backbones for S1 U-Net and S2 classifier performed superiorly to the one-stage 3D-ResNet and 3D-CNNs. The U-shaped architecture of S1 was considered crucial for satisfactory model performance. In the future, the deployment of SGD-Net to the emergency health care system would improve AIS patient care.
+
 <img src='https://github.com/IlikeBB/F3DD/raw/main/plot_results/is0302.gif'></p>
 <a href='https://github.com/IlikeBB/SGD-Net'> Tensorflow Github [SGD-Net]</a></p>
 <a href='https://github.com/IlikeBB/SGD-Plus'> Tensorflow Github [SGD-Plus]</a></p>
