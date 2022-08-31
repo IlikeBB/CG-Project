@@ -18,7 +18,7 @@ Virtual Environment - conda API
 ### Toward Explainable Semantic Segmentation Guided Detector for Segmentation and Classification of Diffusion-Weighted MRI of Acute Ischemic Stroke
 <img src='https://github.com/IlikeBB/F3DD/raw/main/plot_results/is0302.gif'></p>
 <a href='https://github.com/IlikeBB/SGD-Net'> Tensorflow Github [SGD-Net]</a></p>
-<a href='https://github.com/IlikeBB/SGD-Net-Plus'> Tensorflow Github [SGD-Net-Plus]</a></p>
+<a href='https://github.com/IlikeBB/SGD-Plus'> Tensorflow Github [SGD-Plus]</a></p>
 <a href='https://github.com/IlikeBB/SGD-Net-Pytorch'> Pytorch Github [SGD-Net-Pytorch]</a></p>
 
 * Version
