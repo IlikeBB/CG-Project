@@ -23,8 +23,8 @@ Virtual Environment - conda API
 <hr>
 
 ### Subjective Cognitive Decline Brain
-<a href='https://github.com/IlikeBB/CG-Subjective-Cognitive-Decline-Brain'> Python Github [CG-Subjective-Cognitive-Decline-Brain]</a><br>
-<a href='https://github.com/IlikeBB/CG-R-SCD-Project'> R Github [CG-R-SCD-Project]</a>
+<a href='https://github.com/IlikeBB/CG-Project/tree/main/CG-Subjective-Cognitive-Decline-Brain'> Python Github [CG-Subjective-Cognitive-Decline-Brain]</a><br>
+<a href='https://github.com/IlikeBB/CG-Project/tree/main/CG-R-SCD-Project'> R Github [CG-R-SCD-Project]</a>
 
 * Version
 > * Conda: 4.10.3
