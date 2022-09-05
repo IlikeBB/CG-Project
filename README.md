@@ -35,7 +35,6 @@ Virtual Environment - conda API
 
 > This project is working from Chang Gung Medical. Main experiment is research that used maching learning model or deep learning model Covid-19 for gene dataset
 
-<a href='https://github.com/IlikeBB/CG-Project/tree/main/deeplearning_gene_eperiment'> Python Github [deeplearning_gene_eperiment]</a></p>
 <a href='https://github.com/IlikeBB/CG-Project/tree/main/CG-Covid19-Project'> Python Github [CG-Covid19-Project]</a></p>
 <a href='https://github.com/IlikeBB/CG-Project/tree/main/CG-Convert-Gene'> Python Gene Tool Github [CG-Convert-Gene]</a></p>
 
