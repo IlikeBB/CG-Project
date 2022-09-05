@@ -45,7 +45,7 @@ Virtual Environment - conda API
 <hr>
 
 ### Multi Model Experiment - [federated learning, multimodel learning, transfer learning]
-<a href='https://github.com/IlikeBB/Distributed-model'> Python Github Federate [Distributed-model]</a></p>
+<a href='https://github.com/IlikeBB/CG-Project/tree/main/CG-Distributed-model'> Python Github Federate [Distributed-model]</a></p>
 <a href='https://github.com/IlikeBB/Pytorch-Transfer-Learning'> Python Github Transfer [Pytorch-Transfer-Learning]</a></p>
 
 * Version
