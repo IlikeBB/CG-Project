@@ -1,0 +1,3 @@
+CHROM	POS REF ALT DP AD alt Gene name HGVS AF Sample
+NC_045512.2 266 A T - - ORF1ab M1L - -
+NC_045512.2 2989 T A - - ORF1ab T21I - -
