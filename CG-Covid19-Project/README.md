@@ -1,4 +1,6 @@
 # CG-Covid19-Project
+> This project is working from Chang Gung Medical. Main experiment is research that used maching learning model or deep learning model Covid-19 for gene dataset
+
 ## Build Virtual Environment (Using Conda)
 >* `Ubuntu 18.04`
 >* `Python > 3.6`
