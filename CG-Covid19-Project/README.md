@@ -10,7 +10,8 @@
 >* `!conda activate covid`
 >* `!pip install shap`
 
-<img src='https://github.com/IlikeBB/CG-Project/blob/main/CG-Convert-Gene/demo/result2.png'></p>
+## 1404 work arch
+<img src='https://github.com/IlikeBB/CG-Project/blob/main/CG-Covid19-Project/covid_project_arch.png'></p>
 
 ## DataSet
 #### <a href='https://MyQNAP.quickconnect.to/d/s/p0i7nqDHw2vNssB4QI8cRnaDSgUVvpNW/H6lok3r4Cz3gbSqMFC8yKoke1y5TrpXz-bbxgKbZQlQk'> 1401 dataset</a>
