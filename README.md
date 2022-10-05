@@ -16,10 +16,10 @@ Virtual Environment - conda API
 
 * Version
 > * Conda: 4.10.3
-> * Python: 3.8
-> * Tensorflow: 2.2.0
+> * Python: 3.6-3.8
+> * Tensorflow: 2.1.0
 > * Keras: 2.3.1
-> * Pytorch: 1.9.1
+> * Pytorch: 1.7.1
 <hr>
 
 ### Subjective Cognitive Decline Brain
