@@ -20,20 +20,24 @@ def model_list(grid=False, seed=123):
     
     LGBMR_ = LGBMRegressor(random_state=seed, verbose=-1)
 
-    # mlpr_param =  {'hidden_layer_sizes': [(25), (50), (100)]}
+    # mlpr_param =  {'hidden_layer_sizes':  [(25), (50), (75),(100), (25, 50), (50,100), (25, 50, 75),(50, 75, 100)]}
+    # [(25), (50), (75),(100), (25, 50) (50,100), (25, 50, 75),(50, 75, 100)]
+#   [(5), (10), (15),(20), (5, 10) (10,20), (5, 10, 15),(10, 15, 20)]
+    mlpr_param =  {'hidden_layer_sizes':  [(25), (50), (75),(100), (25, 50), (50,100), (25, 50, 75),(50, 75, 100)],
+                                         'learning_rate_init': [0.01, 0.03, 0.001, 0.003, 0.0001, 0.0003], 'activation': ['relu', 'tanh'], 'solver': ['adam', 'lbfgs'], 'learning_rate' : ['constant', 'adaptive', 'invscaling']}
 
-    mlpr_param =  {'hidden_layer_sizes': [(25), (50), (75),(100), (25, 50), (50,100), (25, 50, 75),(50, 75, 100)], 'learning_rate_init': [0.01, 0.03, 0.001, 0.003, 0.0001, 0.0003],
-                                        'activation': ['relu', 'tanh'], 'solver': ['adam', 'lbfgs'], 'learning_rate' : ['constant', 'adaptive', 'invscaling']}
-
-    MLPR_ = MLPRegressor(activation = 'relu', solver = 'adam', max_iter=20000, random_state=seed, early_stopping=True, validation_fraction=0.50, verbose=0)
+    MLPR_ = MLPRegressor(activation = 'relu', solver = 'adam', max_iter=20000, random_state=seed, early_stopping=False, verbose=0)
+    # MLPR_ = MLPRegressor(activation = 'relu', solver = 'adam', max_iter=20000, random_state=seed, early_stopping=True, validation_fraction=0.50, verbose=0)
 
     if grid ==True:
         # model_stack = {"SVR":[SVR_, svr_param], "XBGR":[XGBR_, xgbr_param], "LGBMR": [LGBMR_, lgbmr_param]}
         model_stack = {"MLPR":[MLPR_, mlpr_param], "XBGR":[XGBR_, xgbr_param], "LGBMR": [LGBMR_, lgbmr_param]}
         # model_stack = {"LGBMR": [LGBMR_, lgbmr_param]}
         # model_stack = {"XBGR":[XGBR_, xgbr_param], "LGBMR": [LGBMR_, lgbmr_param]}
+        # model_stack = {"MLPR":[MLPR_, mlpr_param]}
     else:
         # model_stack = {"SVR":SVR_, "XBGR":XGBR_, "LGBMR": LGBMR_}
         # model_stack = {"XBGR":XGBR_, "LGBMR": LGBMR_}
         model_stack = {"MLPR":MLPR_, "XBGR":XGBR_, "LGBMR": LGBMR_}
+        # model_stack = {"MLPR":MLPR_}
     return model_stack

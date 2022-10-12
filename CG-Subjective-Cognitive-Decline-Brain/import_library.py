@@ -15,8 +15,8 @@ from xgboost.sklearn import XGBRegressor
 from sklearn.svm import SVR
 from sklearn.neural_network import MLPRegressor
 from sklearn.model_selection import GridSearchCV
-from skopt import BayesSearchCV
-from skopt.space import Real, Categorical, Integer
+# from skopt import BayesSearchCV
+# from skopt.space import Real, Categorical, Integer
 warnings.filterwarnings("ignore")
 
 if __name__ == '__main__':
