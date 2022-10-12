@@ -1,0 +1,9 @@
+type : Sepsis-original 
+model : MLP 
+model_depth : 3 
+device : cuda 
+opt : Adam 
+lr : 0.003 
+batch_size : 256 
+epochs : 150 
+fixing : None 
