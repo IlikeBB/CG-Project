@@ -33,7 +33,6 @@ if True:
     print(list(table_label))
 # Subject Function Building
 
-
 class logs_realtime_reply:
     def __init__(self):
         self.avg_dice = 0.0
@@ -208,44 +207,44 @@ if True: #data augmentation, dataloader,
 
     validation_set = Dataset(data=X_test, transform=validation_transform)
 
-#     # checkpoint setting
-#     project_name = f"{params['type']} - {params['model']} - {params['opt']} - lr_{params['lr']} - epoch_{params['epochs']}"
-#     project_folder = f"2022.02.08 - Test05"
-#     ck_pth = f'./checkpoint/{project_folder}'
-#     if os.path.exists(ck_pth)==False:
-#         os.mkdir(ck_pth)
-#     ck_name = project_name
-#     # write training setting txt
-#     #txt record model config and adjust 
-#     path = f'./checkpoint/{project_folder}/{project_name}.txt'
-#     f = open(path, 'w')
-#     lines = params
-#     f.writelines([f'{i} : {params[i]} \n' for i in params])
-#     f.close()
-#     # tensorboard setting
-#     tensorboard_logdir = f'./logsdir/mRS/ {project_folder} - {project_name}'
-#     writer=SummaryWriter(tensorboard_logdir)
+    # checkpoint setting
+    project_name = f"{params['type']} - {params['model']} - {params['opt']} - lr_{params['lr']} - epoch_{params['epochs']}"
+    project_folder = f"2022.02.08 - Test05"
+    ck_pth = f'./checkpoint/{project_folder}'
+    if os.path.exists(ck_pth)==False:
+        os.mkdir(ck_pth)
+    ck_name = project_name
+    # write training setting txt
+    #txt record model config and adjust 
+    path = f'./checkpoint/{project_folder}/{project_name}.txt'
+    f = open(path, 'w')
+    lines = params
+    f.writelines([f'{i} : {params[i]} \n' for i in params])
+    f.close()
+    # tensorboard setting
+    tensorboard_logdir = f'./logsdir/mRS/ {project_folder} - {project_name}'
+    writer=SummaryWriter(tensorboard_logdir)
 
 
 
 
-# if True: #model edit area
-#     # model create
-#     model = model_create(depth=params['model_depth'])
-#     # loss
-#     from sklearn.utils.class_weight import compute_class_weight
-#     class_weights=compute_class_weight(class_weight = 'balanced', classes=np.array([0,1]), y=np.array(table_label))
-#     class_weights=torch.tensor(class_weights,dtype=torch.float).to(device)
-#     print("class_weights", class_weights)
-#     loss = torch.nn.CrossEntropyLoss(weight=class_weights)
-#     # loss = FocalLoss()
-#     # optimizer
-#     if params['opt']=='Adam':
-#         optimizer = Adam(model.parameters(), lr=params['lr'], betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
-#     else:
-#         optimizer = torch.optim.SGD(model.parameters(), lr=params['lr'], weight_decay = 1e-4, momentum=0.9)
-#     # scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.01, patience=3)
-#     # scheduler = CosineAnnealingWarmRestarts(optimizer, T_0=5, T_mult=2, last_epoch=-1)
-#     logs  = train_valid_process_main(model, training_set, validation_set, params['batch_size'])
+if True: #model edit area
+    # model create
+    model = model_create(depth=params['model_depth'])
+    # loss
+    from sklearn.utils.class_weight import compute_class_weight
+    class_weights=compute_class_weight(class_weight = 'balanced', classes=np.array([0,1]), y=np.array(table_label))
+    class_weights=torch.tensor(class_weights,dtype=torch.float).to(device)
+    print("class_weights", class_weights)
+    loss = torch.nn.CrossEntropyLoss(weight=class_weights)
+    # loss = FocalLoss()
+    # optimizer
+    if params['opt']=='Adam':
+        optimizer = Adam(model.parameters(), lr=params['lr'], betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
+    else:
+        optimizer = torch.optim.SGD(model.parameters(), lr=params['lr'], weight_decay = 1e-4, momentum=0.9)
+    # scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.01, patience=3)
+    # scheduler = CosineAnnealingWarmRestarts(optimizer, T_0=5, T_mult=2, last_epoch=-1)
+    logs  = train_valid_process_main(model, training_set, validation_set, params['batch_size'])
 
-#     writer.close()
+    writer.close()
