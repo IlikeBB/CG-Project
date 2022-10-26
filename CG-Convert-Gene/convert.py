@@ -1,4 +1,5 @@
 import os, sys, Bio, argparse
+from xmlrpc.client import boolean
 import pandas as pd
 # search gene name
 search_dict = {(266,21555): ['ORF1ab',], 
@@ -66,9 +67,9 @@ class convert_process:
     def search_position(self, pos):
         for idx, i in enumerate(search_dict):
             # if ==
-            if (pos[0] >=i[0] and pos[0]<=i[1]) and (args.nullchange)==True:
+            if (pos[0] >=i[0] and pos[0]<=i[1]) and bool(args.nullchange)==True:
                 self.process_rna(pos, i)
-            elif (pos[0] >=i[0] and pos[0]<=i[1]) and (args.nullchange)==False:
+            elif (pos[0] >=i[0] and pos[0]<=i[1]) and bool(args.nullchange==False) and (pos[1]!=search_dict[i][1][pos[0] - i[0]]):
                 self.process_rna(pos, i)
 
     def standard(self,):
@@ -76,15 +77,25 @@ class convert_process:
         data_vcf = {'CHROM': self.chrom, 'POS': self.position, 'REF': self.ref, 'ALT': self.alt, 'Gene': self.gene, 'Gene LOC': self.gene_loc, 'Translate': self.trans}
         return pd.DataFrame(data_vcf)
 
+def str2bool(v):
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", "-i", type=str, required=False, default='./demo/test.csv',help='Input Gene Feature data. e.g.: *.csv.  Default: ./demo/test.csv')
     parser.add_argument("--output", "-o", type=str, required=False, default='./demo/output', help='Export translation gene data. Default: ./demo/output')
-    parser.add_argument("--nullchange", "-nc", type=bool, required=False, default=True, help='Filter Gene with no change. Default: True')
+    parser.add_argument("--nullchange", "-nc", type=str2bool,required = False, help='Filter Gene with no change. Default: False')
     # parser.add_argument("-h", "--help", default='help',required=False)
+    
     args = parser.parse_args()
     feature_data = list(pd.read_csv(args.input).values)
-
+    print(args.nullchange)
     f = open('./demo/sequence.txt', 'r')
     gene_dict = [i.replace('\n','').split('[gbkey=Gene]')[1] for i in f.read().split('>') if len(i)>0 ]
     for idx, i in enumerate(search_dict):
